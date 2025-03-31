@@ -1,0 +1,63 @@
+/* styles.css */
+body {
+    background: #69190b;
+    color: #dc9ea5;
+    text-align: center;
+    font-family:, cursive;
+    overflow: hidden;
+}
+.message {
+    font-size: 50px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out 4s forwards;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+.balloon {
+    width: 70px;
+    height: 90px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -100px;
+    animation: floatBalloon 6s linear infinite;
+    box-shadow: 0 5px 15px rgb(255, 255, 255);
+}
+.string {
+    width: 3px;
+    height: 70px;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%) rotate(20deg);
+    background: rgb(201, 125, 125);
+    animation: waveString 1s ease-in-out infinite alternate;
+}
+@keyframes floatBalloon {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-120vh); opacity: 0; }
+}
+@keyframes waveString {
+    0% { transform: translateX(-50%) rotate(15deg); }
+    100% { transform: translateX(-50%) rotate(-15deg); }
+}
+.firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #d3b983;
+    border-radius: 50%;
+    opacity: 0;
+    animation: explode 1s ease-in-out forwards;
+}
+@keyframes explode {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(5); }
+}
